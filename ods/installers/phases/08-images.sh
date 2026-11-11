@@ -114,7 +114,7 @@ if [[ "$ENABLE_HERMES" == "true" ]]; then
     # and docs/HERMES.md for the bump process. Hermes-proxy is the auth gate
     # (Caddy) and is pulled alongside Hermes.
     PULL_LIST+=("${HERMES_AGENT_IMAGE:-nousresearch/hermes-agent:v2026.9.24@sha256:fca358f12efd65bfaaca05884166f15c0e2788375ca30d77061ac1ebc96452b7}|HERMES — default agent (Nous Research)")
-    PULL_LIST+=("caddy:2.11.3-alpine@sha256:86deaf5e3d3408a6ccec08fbb79989783dd26e206ae10bcf78a801dc8c9ab794|HERMES PROXY — magic-link auth gate (Caddy)")
+    PULL_LIST+=("caddy:2.11.9-alpine@sha256:0bbb055bda6793c999bde78b1b5ce3e89f829fb031af2cf50056ea1246559fee|HERMES PROXY — magic-link auth gate (Caddy)")
 fi
 [[ "$ENABLE_OPENCLAW" == "true" ]] && PULL_LIST+=("ghcr.io/openclaw/openclaw:2026.3.8@sha256:7b1294f6aa2eb05b2070cc614743f79212313fc294e5de221ada8a2969ea52f6|OPENCLAW — agent framework")
 [[ "${ENABLE_EMBEDDINGS:-${ENABLE_RAG:-false}}" == "true" ]] && PULL_LIST+=("ghcr.io/huggingface/text-embeddings-inference:cpu-1.9.1@sha256:b7772cdd9dcbced147b16a7dff17d4aed1ab36333f8d3e686c50d2175e1d2126|TEI — embedding engine")
