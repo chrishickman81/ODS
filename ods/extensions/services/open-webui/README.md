@@ -188,9 +188,9 @@ docker compose logs open-webui
 ## License
 
 The ODS integration and the upstream application have different terms.
-The pinned Open WebUI v0.11.4 image uses the
-[Open WebUI license](https://github.com/open-webui/open-webui/blob/v0.11.4/LICENSE),
+The pinned Open WebUI v0.12.5 image uses the
+[Open WebUI license](https://github.com/open-webui/open-webui/blob/v0.12.5/LICENSE),
 including its branding conditions; code from before those conditions keeps the
-terms in its [LICENSE_HISTORY](https://github.com/open-webui/open-webui/blob/v0.11.4/LICENSE_HISTORY).
+terms in its [LICENSE_HISTORY](https://github.com/open-webui/open-webui/blob/v0.12.5/LICENSE_HISTORY).
 See [BRANDING.md](BRANDING.md) before making branding changes. ODS's Apache
 license does not relicense Open WebUI.

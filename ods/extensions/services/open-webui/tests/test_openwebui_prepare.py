@@ -23,8 +23,8 @@ SERVICE = Path(__file__).resolve().parents[1]
 ODS = SERVICE.parents[2]
 SCRIPT = SERVICE / "openwebui-prepare.py"
 WRAPPER = SERVICE / "openwebui-entrypoint.sh"
-PIN = ("ghcr.io/open-webui/open-webui:v0.11.4"
-       "@sha256:9591b13f13843c7721c2b8eaf7382846c81b3ffe126526d1888d1fed50c6a33f")
+PIN = ("ghcr.io/open-webui/open-webui:v0.12.5"
+       "@sha256:03443b8de6b617da9d900edd09b4bf1cb0ddbfdcba6afb42c548336a0b821ded")
 
 SPEC = importlib.util.spec_from_file_location("openwebui_prepare", SCRIPT)
 assert SPEC and SPEC.loader

@@ -12,15 +12,15 @@ Set via env vars in `docker-compose.base.yml`. These flow into Open WebUI's runt
 | `WEBUI_URL` | empty | Optional public URL Open WebUI uses for share links, OAuth callbacks, and PWA install metadata. Leave empty for traditional localhost usage. Headless/proxy installs should set it to `http://chat.${ODS_DEVICE_NAME}.local` after ods-proxy + mDNS are enabled; tunnels should use their public URL. |
 | `ODS_DEVICE_NAME` | `ods` | The mDNS hostname segment. Drives `${...}.local` and is reused by future remote-access integrations. |
 
-ODS passes `WEBUI_NAME=ODS` to the pinned Open WebUI v0.11.4 image. That
-version's [name handling](https://github.com/open-webui/open-webui/blob/v0.11.4/backend/open_webui/env.py#L951-L953)
+ODS passes `WEBUI_NAME=ODS` to the pinned Open WebUI v0.12.5 image. That
+version's [name handling](https://github.com/open-webui/open-webui/blob/v0.12.5/backend/open_webui/env.py#L995-L997)
 appends ` (Open WebUI)` to a custom name, so the expected default is
 `ODS (Open WebUI)`. Verify the actual page and PWA on the installed version;
 this setting does not promise that all upstream branding disappears.
 
 ## License boundary
 
-The pinned [Open WebUI license](https://github.com/open-webui/open-webui/blob/v0.11.4/LICENSE)
+The pinned [Open WebUI license](https://github.com/open-webui/open-webui/blob/v0.12.5/LICENSE)
 contains a branding restriction and specific exceptions: deployments or
 distributions with no more than 50 end users within a rolling 30-day period,
 specific prior written permission from the copyright holder, or a duly executed
