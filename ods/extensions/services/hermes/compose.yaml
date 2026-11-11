@@ -135,6 +135,14 @@ services:
       # there. data/persona/ stays operator-owned so the host can
       # regenerate the file without sudo.
       - ./data/persona/SOUL.md:/opt/hermes/docker/SOUL.md:ro,z
+    # Hermes creates its execute_code RPC socket in its scratch dir
+    # (/opt/data/cache/scratch). On macOS Docker Desktop /opt/data is a virtiofs
+    # bind mount where bind() works but chmod() on a socket fails with EINVAL, so
+    # execute_code died before running any code. A tmpfs here is a real Linux
+    # filesystem; uid/gid match the Hermes user so its owner-only chmod still works.
+    # Scratch is transient (idle-pruned), so losing it on container restart is fine.
+    tmpfs:
+      - /opt/data/cache/scratch:mode=0700,uid=${ODS_UID:-10000},gid=${ODS_GID:-10000},size=1g
     # Hermes is exposed to the LAN via ods-hermes-proxy on port 9120 — that
     # Caddy sidecar forward_auths to dashboard-api's verify-session and only
     # then forwards traffic here. By NOT binding a host port on the Hermes
