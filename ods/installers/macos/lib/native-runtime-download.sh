@@ -11,6 +11,9 @@ macos_llama_asset_sha256() {
         b8210) printf '%s\n' '8cc228499f05adb69b92462f8060448bec75a7ba406f03c1fca8e628b4ff5c91' ;;
         # Default pin (constants.sh); tag commit d4b0c22f9e67, 8,593,054 bytes.
         b9014) printf '%s\n' '565aecda0838daa433f363ae9a1c9ed6c94831de3fd093cb08179a5a3fd4f22d' ;;
+        # Fork pin (local/stable bump): tag commit a3a1c4747fdc, 11,965,257 bytes; digest
+        # matches the asset digest GitHub publishes for the release.
+        b11404) printf '%s\n' '1b89c84aaf922e30048c44a525496785e360e0158abd560d434d6ac94d6ed951' ;;
         *) ai_err "No trusted checksum for llama.cpp release $1."; return 1 ;;
     esac
 }
