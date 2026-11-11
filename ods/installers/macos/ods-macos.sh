@@ -769,6 +769,9 @@ start_native_llama() {
     macos_resolve_checkpoint_args "$INSTALL_DIR" "$LLAMA_SERVER_BIN" "$reasoning_fmt" || return 1
     llama_args+=(${MACOS_NATIVE_CHECKPOINT_ARGS[@]+"${MACOS_NATIVE_CHECKPOINT_ARGS[@]}"})
     fi
+    # Optional short model name for the OpenAI-compatible API (/v1/models id), e.g. so
+    # chat UIs show "qwen3.6-35b-a3b" instead of the full GGUF path.
+    [[ -z "${ENV_LLAMA_ARG_ALIAS:-}" ]] || llama_args+=(--alias "$ENV_LLAMA_ARG_ALIAS")
 
     # Artifact and argument verification must precede termination of working inference.
     [[ "$replace" != true ]] || stop_native_llama
