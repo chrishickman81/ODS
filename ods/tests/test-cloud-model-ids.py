@@ -42,7 +42,7 @@ ROOT = Path(__file__).resolve().parents[1]
 #     drop_params does not strip it. claude-sonnet-5 returns HTTP 400 for
 #     non-default temperature/top_p/top_k, so it stays off this list until
 #     those callers stop sending them.
-# Last checked 2026-09-25 against the Anthropic docs and LiteLLM v1.90.7.
+# Last checked 2026-09-25 against the Anthropic docs and LiteLLM v1.90.7 (callback still verified on v1.109.1).
 KNOWN_VALID_ANTHROPIC_MODELS = {
     # Sonnet 4.6: 1M context, $3/$15 per MTok, retires no sooner than
     # 2027-02-17. From the 4.6 generation on, the dateless ID is the pinned

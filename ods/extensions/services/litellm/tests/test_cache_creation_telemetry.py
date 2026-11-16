@@ -67,8 +67,8 @@ def test_outgoing_ingest_uses_cache_creation_detail_without_changing_totals(monk
 
 
 @pytest.mark.skipif(os.environ.get('ODS_TEST_LITELLM_PIN') != '1', reason='Opt-in exact LiteLLM dependency contract')
-def test_real_litellm_1907_usage_object_reaches_ingest(monkeypatch):
-    assert importlib.metadata.version('litellm') == '1.90.7'
+def test_real_litellm_1109_usage_object_reaches_ingest(monkeypatch):
+    assert importlib.metadata.version('litellm') == '1.109.1'
     from litellm import ModelResponse, Usage
 
     response = ModelResponse(model='fixture', usage=Usage(
