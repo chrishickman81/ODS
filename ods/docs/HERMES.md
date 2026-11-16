@@ -289,6 +289,7 @@ When promoting / talking about this extension, the convention is: "Hermes Agent 
 
 | Date | Pinned image | Notes |
 |---|---|---|
+| 2026-11-10 | `nousresearch/hermes-agent:v0.23.1@sha256:276d44685c65c0cb2a25f190b63c65c8906f9dc76486fb1c05ae71b5826bda08` | Hermes Agent 0.23.1 stable release, source `3b421578588243f920886e6fe79a6faa87ea026e`; shared AMD64/ARM64 index. |
 | 2026-09-24 | `nousresearch/hermes-agent:v2026.9.24` at `sha256:fca358f12efd65bfaaca05884166f15c0e2788375ca30d77061ac1ebc96452b7` | Hermes Agent 0.21.5 stable release, source `f97608f178d1ffeca59860195ab7da295f7c8e5f`; shared AMD64/ARM64 index. Custom image overrides and persistent data remain supported. |
 | 2026-07-30 | `nousresearch/hermes-agent:v2026.6.5` | Persist Hermes's supported dashboard session token so WebSocket reconnects survive container restarts; retain compatibility with ODS's authenticated proxy topology. |
 | 2026-06-01 | `nousresearch/hermes-agent:v2026.5.16` | Replace removed upstream `sha-*` tag with a published version tag; add `HERMES_AGENT_IMAGE` override/fallback path. |

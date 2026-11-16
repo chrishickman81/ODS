@@ -11,7 +11,19 @@ import json
 import os
 from pathlib import Path
 
-import yaml
+try:
+    import yaml
+except ModuleNotFoundError:
+    # Hermes >= 0.23 ships ruamel.yaml in its venv instead of PyYAML, and this
+    # file is that image's entrypoint. The API still has PyYAML.
+    yaml = None
+    from ruamel.yaml import YAML
+
+
+def _safe_load(text):
+    if yaml is not None:
+        return yaml.safe_load(text)
+    return YAML(typ="safe").load(text)
 
 
 def settings(env=None, config_path=None):
@@ -30,7 +42,7 @@ def settings(env=None, config_path=None):
                 return None
         config_path = "/nonexistent-ods-hermes-config"
     try:
-        config = yaml.safe_load(Path(config_path).read_text()) or {}
+        config = _safe_load(Path(config_path).read_text()) or {}
     except FileNotFoundError:
         config = {}
     dashboard = config.get("dashboard", {}) or {}
